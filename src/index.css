@@ -1,0 +1,260 @@
+*{
+  margin: 0;
+  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Oswald', sans-serif;
+}
+
+a {
+  text-decoration: none; /* Remove o sublinhado */
+  color: #333; /* Altera a cor do link */
+}
+.nav{
+  background: linear-gradient(126deg, rgba(17,110,168,1) 20%, rgba(252,222,4,1) 100%);
+}
+
+.navTitulo{
+ text-align: center;
+ color: #fff;
+ padding: 20px;
+ font-size: 50px;
+}
+
+.cardCorpo{
+  display: flex;
+  justify-content: center;
+}
+
+.card{
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+  height: 300px;
+  margin-top: 20px;
+  border-radius: 10px;
+  margin: 20px;
+}
+
+.subtitulo{
+  font-style: italic;
+  font-size: 17px;
+  color: darkgrey;
+}
+
+.btn-inicio{
+  border: none;
+  background-color: #fcde04;
+  color: #116ea8;
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  font-style: italic;
+  font-size: 20px;
+  transition: 0.5s ease, color 0.5s ease;
+}
+.btn-inicio:hover{
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  transition: 0.5s ease, color 0.5s ease;
+}
+
+.logo{
+  width: 250px;
+}
+
+.imgHome{
+  background-color: #fff4a4;
+  border-radius: 100%;
+  padding: 20px;
+  width: 90px;
+}
+
+/* Pagina do carro/cliente */
+
+.tituloCarro{
+  text-align: center;
+}
+table {
+  width: 95%;
+  border-collapse: collapse;
+  margin: 20px;
+}
+
+th, td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 5px;
+  font-size: 19px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+th {
+  background-color: #116ea8;
+  color: white;
+}
+
+.back{
+  margin-left: 20px;
+  width: 50px;
+}
+
+.cabecalho{
+  display: flex;
+  justify-content: center;
+}
+
+.addImg{
+  width: 30px;
+  cursor: pointer;
+}
+
+.addImg{
+  margin-right: 15px;
+}
+
+.inputBusca{
+  border: 2px solid #116ea8;
+  border-radius: 05px;
+  width: 300px;
+  padding: 5px;
+}
+
+.inputBusca:focus{
+  box-shadow: 0 0 5px #fcde04;
+  outline: none;
+}
+
+/* Paginas de add carro/cliente */
+.conteinerNewCar{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.titleNewCar{
+  text-align: center;
+}
+
+.formCarro{
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  width: 700px;
+  padding: 20px;
+  margin: 15px;
+  border-radius: 10px;
+}
+
+.labelCar{
+  margin-left: 15px;
+  font-size: 25px;
+  margin-right: 10px;
+}
+
+.inputCar{
+  border: 2px solid #116ea8;
+  border-radius: 05px;
+  padding: 4px;
+  font-size: 25px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.inputCar:focus{
+  box-shadow: 0 0 5px #fcde04;
+  outline: none;
+}
+
+/* Pagina do carro pelo ID */
+
+.conteinerCarroId{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.cardCarroId{
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  width: 300px;
+  padding: 20px;
+  margin: 15px;
+  font-size: 25px;
+  border-radius: 10px;
+}
+
+.alugado{
+  margin-bottom: 20px;
+  margin-top: 10px;
+  background-color: rgb(255, 126, 126);
+  border-radius: 10px;
+  color: rgb(192, 57, 57);
+  font-weight: bolder;
+}
+
+.livre{
+  margin-bottom: 20px;
+  margin-top: 10px;
+  background-color: rgb(139, 209, 139);
+  border-radius: 10px;
+  color: rgb(51, 85, 51);
+  font-weight: bolder;
+}
+
+.excluir{
+  background-color: rgb(250, 114, 114);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  padding: 7px;
+  cursor: pointer;
+  transition: 0.3s ease, color 0.3s ease; 
+}
+.excluir:hover{
+  background-color: #fff;
+  color: rgb(250, 114, 114);
+  transition: 0.3s ease, color 0.3s ease; 
+  border: 1px solid rgb(250, 114, 114);
+}
+
+.imgCarroCard{
+  width: 250px;
+  border-radius: 10px;
+}
+
+/* Modals */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+}

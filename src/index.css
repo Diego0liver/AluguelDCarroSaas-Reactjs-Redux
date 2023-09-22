@@ -102,6 +102,21 @@ th {
   margin-left: 20px;
   width: 50px;
 }
+/* animacao do botao de voltar */
+@keyframes animacao {
+  0% {
+    transform: translateX(0); 
+  }
+  50% {
+    transform: translateX(20px); 
+  }
+  100% {
+    transform: translateX(0); 
+  }
+}
+.back:hover{
+  animation: animacao 1s ease-in-out infinite; 
+}
 
 .cabecalho{
   display: flex;
@@ -200,14 +215,14 @@ th {
 .livre{
   margin-bottom: 20px;
   margin-top: 10px;
-  background-color: rgb(139, 209, 139);
+  background-color: #8bd18b;
   border-radius: 10px;
   color: rgb(51, 85, 51);
   font-weight: bolder;
 }
 
 .excluir{
-  background-color: rgb(250, 114, 114);
+  background-color: #fa7272;
   color: #fff;
   border: none;
   border-radius: 10px;

@@ -50,9 +50,10 @@ const Newclient = () => {
           <label className='labelCar'>Genero</label>
           <select name="genero" className='inputCar'
              value={genero} onChange={(e)=> setGenero(e.target.value)} >
+            <option  selected></option>
             <option value="Homem">Homem</option>
             <option value="Mulher">Mulher</option>
-            <option value="Nao identificado">Nao identificado</option>
+            <option value="Outro">Outro</option>
           </select><br/>
 
           <button onClick={newClientId} className='btn-inicio'>Salvar !</button>

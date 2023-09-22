@@ -45,7 +45,8 @@ const Carros = () => {
                 <td>{item.cor}</td>
                 <td>{item.placa}</td>
                 <td>R$ {item.valorDiaria}</td>
-                <td><Link to={{ pathname: `/carro/${item.id}` }}>
+                <td style={{ background: item.status === 'livre' ? '#8bd18b' : '#fa7272' }}>
+                  <Link to={{ pathname: `/carro/${item.id}` }}>
                   {item.status}</Link>
                 </td>
               </tr>

@@ -68,8 +68,17 @@ const CarroId = () => {
 
   let clienteDoCarro = carroID.cliente
  if(clienteDoCarro !== undefined && clienteDoCarro !== null){
-  // Retorno se o carro estive alugado
-  return (
+ 
+  //Convertendo data da atualizacao do banco de dados para pegar somente o dia e o mes
+  const dataObjeto = new Date( carroID.updated_at);
+  const mes = String(dataObjeto.getMonth() + 1).padStart(2, "0"); 
+  const dia = String(dataObjeto.getDate()).padStart(2, "0");
+  const dataFormatada = `${mes}-${dia}`;
+  const partes = dataFormatada.split('-');
+  const dataInvertida = `${partes[1]}-${partes[0]}`; 
+
+ // Retorno se o carro estive alugado
+    return (
     <div className='conteinerCarroId'>
        <h1>Controle do Carro {carroID.modelo}</h1>
           <Link to='/carros'>
@@ -80,7 +89,7 @@ const CarroId = () => {
           <h3>{carroID.modelo} &nbsp; &nbsp; {carroID.cor}</h3>
           <p>Placa:{carroID.placa} &nbsp; &nbsp; KM:{carroID.km}</p>
           <p>Diaria R${carroID.valorDiaria}</p>
-          <p className='alugado'>Carro {carroID.status} para {clienteDoCarro.nome}</p>
+          <p className='alugado'>Carro {carroID.status} para {clienteDoCarro.nome} no dia {dataInvertida}</p>
           <button onClick={openModal2} className='btn-inicio'>Livrar Carro !</button>
          <div>
            <Modal2 isOpen2={isModalOpen2} onClose2={closeModal2} idCar={carroID.id}/> 

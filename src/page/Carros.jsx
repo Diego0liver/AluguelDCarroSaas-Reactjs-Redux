@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react'
+import React,{useEffect, useState} from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import {fetcApi} from '../api/fectApi'
 import Back from '../img/back.png'
@@ -8,11 +8,14 @@ import { Link } from 'react-router-dom'
 const Carros = () => {
    const cars = useSelector((state) => state.cars)
   const dispatch = useDispatch()
+  const [busca, setBusca] = useState('')
   
     useEffect(() => {
     dispatch(fetcApi())
     }, [dispatch])
-  
+    const filterCarro = cars.filter((carro) =>
+    carro.modelo.toLowerCase().includes(busca.toLowerCase())
+  );
   return (
     <div className='conteinerCarro'>
       
@@ -24,7 +27,8 @@ const Carros = () => {
          <Link to='/novoCarro'>
          <img className='addImg' src={Add} alt='add' />
          </Link>
-         <input className='inputBusca' placeholder='Buscar carro' ></input>
+         <input value={busca} onChange={(e)=>setBusca(e.target.value)}
+          className='inputBusca' placeholder='Buscar carro' ></input>
        </div>
         <table>
           <thead>
@@ -37,7 +41,7 @@ const Carros = () => {
             </tr>
           </thead>
           <tbody>
-            {cars.map((item) => (
+            {filterCarro.map((item) => (
               <tr key={item.id}>
                 <td><Link to={{ pathname: `/carro/${item.id}` }}>
                   {item.modelo}</Link>

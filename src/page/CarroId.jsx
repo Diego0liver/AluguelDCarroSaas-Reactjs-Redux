@@ -89,7 +89,7 @@ const CarroId = () => {
           <h3>{carroID.modelo} &nbsp; &nbsp; {carroID.cor}</h3>
           <p>Placa:{carroID.placa} &nbsp; &nbsp; KM:{carroID.km}</p>
           <p>Diaria R${carroID.valorDiaria}</p>
-          <p className='alugado'>Carro {carroID.status} para {clienteDoCarro.nome} no dia {dataInvertida}</p>
+          <p className='alugado'>Carro {carroID.status} para {clienteDoCarro.nome}<br/> no dia {dataInvertida}</p>
           <button onClick={openModal2} className='btn-inicio'>Livrar Carro !</button>
          <div>
            <Modal2 isOpen2={isModalOpen2} onClose2={closeModal2} idCar={carroID.id}/> 

@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react'
+import React,{useEffect, useState} from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import {fetcApiCliente} from '../api/fectApi'
 import Back from '../img/back.png'
@@ -9,9 +9,15 @@ import { Link } from 'react-router-dom'
 const Cliente = () => {
   const cars = useSelector((state) => state.cars)
   const dispatch = useDispatch()
+  const [busca, setBusca] = useState('')
+  
   useEffect(() => {
     dispatch(fetcApiCliente())
     }, [dispatch]);
+
+    const filterCliente = cars.filter((carro) =>
+    carro.nome.toLowerCase().includes(busca.toLowerCase())
+  );
 
   return (
     <div className='conteinerCarro'>
@@ -24,7 +30,8 @@ const Cliente = () => {
          <Link to='/novoClient'>
          <img className='addImg' src={Add} alt='add' />
          </Link>
-         <input className='inputBusca' placeholder='Buscar cliente' ></input>
+         <input value={busca} onChange={(e)=>setBusca(e.target.value)}
+          className='inputBusca' placeholder='Buscar cliente' ></input>
        </div>
       <table>
         <thead>
@@ -37,7 +44,7 @@ const Cliente = () => {
           </tr>
         </thead>
         <tbody>
-          {cars.map((item) => (
+          {filterCliente.map((item) => (
             <tr key={item.id}>
               <td>{item.nome}</td>
               <td>{item.documento}</td>
